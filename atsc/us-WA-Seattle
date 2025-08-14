@@ -1,9 +1,15 @@
 # initial tuning data for Seattle, WA
 
 # Generated as follows (after adjusting the hdhomerun_config device id):
-# for f in $(hdhomerun_config 1015EE10 scan 0 | grep -B1 8vsb | grep SCANNING | awk '{print $2}' |sort) ; do
+# for f in $(hdhomerun_config 1015EE10 scan 0 | grep -B1 8vsb | grep SCANNING | awk '{print $2}' | sort -n) ; do
 #   printf "[CHANNEL]\n\tDELIVERY_SYSTEM = ATSC\n\tFREQUENCY = %s\n\tMODULATION = VSB/8\n\tINVERSION = AUTO\n\n" $f
 # done
+
+[CHANNEL]
+	DELIVERY_SYSTEM = ATSC
+	FREQUENCY = 85000000
+	MODULATION = VSB/8
+	INVERSION = AUTO
 
 [CHANNEL]
 	DELIVERY_SYSTEM = ATSC
@@ -124,10 +130,3 @@
 # 	FREQUENCY = 689000000
 # 	MODULATION = VSB/8
 # 	INVERSION = AUTO
-
-[CHANNEL]
-	DELIVERY_SYSTEM = ATSC
-	FREQUENCY = 85000000
-	MODULATION = VSB/8
-	INVERSION = AUTO
-
